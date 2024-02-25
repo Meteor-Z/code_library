@@ -25,3 +25,5 @@ add_compile_options(-Wall -Wextra -Wshadow -Wpedantic) # fsanitize=undefined -fs
 include_directories(${CMAKE_SOURCE_DIR}/src/)
 
 add_executable(main main.cc)
+
+target_link_directories(main PUBLIC src)
