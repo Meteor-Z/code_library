@@ -1,5 +1,5 @@
-#include <vector.h>
+#include <bits/stdc++.h>
 
 int main() {
-    my_code::vector_test();
+    std::cout << 1 << std::endl;
 }
