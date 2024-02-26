@@ -26,4 +26,4 @@ include_directories(${CMAKE_SOURCE_DIR}/src/)
 
 add_executable(main main.cc)
 
-target_link_directories(main PUBLIC src)
+# target_link_directories(main PUBLIC src)

@@ -1,11 +1,8 @@
-#include <bits/stdc++.h>
+#include <vector>
 
-struct Node {
-    Node(int a) : a { std::make_unique<int>(a) } {}
-    ~Node() = default;
-
-    std::shared_ptr<int> a {};
-};
-int main() { Node a(1); 
-    std::cout << *a.a.get() << std::endl;
+struct V:std::vector<V> {};
+int main() {
+    std::vector<V> a;
+    a.emplace_back();
+    a.swap(a.front());
 }
