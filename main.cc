@@ -1,9 +1,5 @@
-#include <vector>
-
-struct V : std::vector<V> { };
+#include "thread_pool.h"
 
 int main() {
-    std::vector<V> a;
-    a.emplace_back();
-    a.swap(a.front());
+    thread_pool_test();
 }

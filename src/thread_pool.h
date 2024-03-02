@@ -1,8 +1,7 @@
 #ifndef MY_CODE_THREAD_POOL_H
 #define MY_CODE_THREAD_POOL_H
 
-#include <bits/stdc++.h>
-#include <boost/circular_buffer.hpp>
+#include <iostream>
 
 namespace my_code {
 
@@ -77,7 +76,6 @@ public:
         std::future<Ret> ret = pt.get_future();
 
         Task task(std::move(pt));
-
         {
             std::unique_lock<std::mutex> lock { m_mtex };
 
@@ -108,7 +106,7 @@ private:
             Task t;
             {
                 std::unique_lock lock { m_mtex };
-                
+
                 while (m_is_running && m_queue.empty()) {
                     m_not_empty.wait(lock);
                 }

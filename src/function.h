@@ -1,7 +1,7 @@
 #ifndef MY_CODE_FUNCTION_H
 #define MY_CODE_FUNCTION_H
 
-#include <bits/stdc++.h>
+#include <iostream>
 #include <utility>
 
 namespace my_code {
