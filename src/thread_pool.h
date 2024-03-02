@@ -2,40 +2,17 @@
 #define MY_CODE_THREAD_POOL_H
 
 #include <iostream>
+#include <memory>
+#include <mutex>
+#include <cassert>
+#include <future>
+#include <vector>
+#include <thread>
+#include <boost/circular_buffer.hpp>
 
 namespace my_code {
 
 class ThreadPool {
-
-    class Task {
-    public:
-        Task() = default;
-
-        template <class Fun>
-        Task(Fun&& f) : m_ptr { new Wrapper(std::move(f)) } {}
-
-        void operator()() { m_ptr->call(); }
-
-    private:
-        class WrapperBase {
-        public:
-            virtual void call() = 0;
-            virtual ~WrapperBase() = default;
-        };
-
-        template <typename Fun>
-        class Wrapper : public WrapperBase {
-        public:
-            explicit Wrapper(Fun&& f) : m_func(std::move(f)) {}
-            virtual void call() override { m_func(); }
-            ~Wrapper() = default;
-
-        private:
-            Fun m_func;
-        };
-
-        std::unique_ptr<WrapperBase> m_ptr;
-    };
 
 public:
     ThreadPool(size_t queue_size) : m_queue(queue_size), m_is_running(false) {}
@@ -98,6 +75,37 @@ public:
 
         return ret;
     }
+
+private:
+    class Task {
+    public:
+        Task() = default;
+
+        template <class Fun>
+        Task(Fun&& f) : m_ptr { new Wrapper(std::move(f)) } {}
+
+        void operator()() { m_ptr->call(); }
+
+    private:
+        class WrapperBase {
+        public:
+            virtual void call() = 0;
+            virtual ~WrapperBase() = default;
+        };
+
+        template <typename Fun>
+        class Wrapper : public WrapperBase {
+        public:
+            explicit Wrapper(Fun&& f) : m_func(std::move(f)) {}
+            virtual void call() override { m_func(); }
+            ~Wrapper() = default;
+
+        private:
+            Fun m_func;
+        };
+
+        std::unique_ptr<WrapperBase> m_ptr;
+    };
 
 private:
     // 相当于轮询
