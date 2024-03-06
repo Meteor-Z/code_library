@@ -1,5 +1,3 @@
-#include "thread_pool.h"
+#include "sort/heap_sort.h"
 
-int main() {
-    thread_pool_test();
-}
+int main() { heap_sort_test(); }
