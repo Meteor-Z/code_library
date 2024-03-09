@@ -5,11 +5,12 @@
 #include <iostream>
 
 namespace my_code {
-void down(std::vector<int>& arr, int u) {
-    size_t t = u;
-    if (u * 2 <= arr.size() - 1 && arr[u * 2] < arr[t])
+inline void down(std::vector<int>& arr, int u) {
+    int t = u;
+    int n = arr.size();
+    if (u * 2 <= n - 1 && arr[u * 2] < arr[t])
         t = u * 2;
-    if (u * 2 + 1 <= arr.size() - 1 && arr[u * 2 + 1] < arr[t])
+    if (u * 2 + 1 <= n - 1 && arr[u * 2 + 1] < arr[t])
         t = 2 * u + 1;
     if (u != t) {
         std::swap(arr[u], arr[t]);
@@ -27,7 +28,6 @@ inline void heap_sort(std::vector<int>& arr) {
 inline void heap_sort_test() {
     
     std::vector<int> arr { 0, 45, 14, 23, 1, 2, 53, 213, 1, 3 };
-    int n = arr.size();
     my_code::heap_sort(arr);
     int cnt = arr.size();
     while(cnt--) {

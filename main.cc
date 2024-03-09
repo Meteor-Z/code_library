@@ -1,3 +1,9 @@
-#include "sort/heap_sort.h"
+#include <array>
+#include <iostream>
 
-int main() { heap_sort_test(); }
+int main() {
+    std::array<int, 3> a { 1, 2, 3 };
+    a.fill(3);
+    std::cout << a[0] << ' ' << a[1] << ' ' << a[2] << std::endl;
+
+}
