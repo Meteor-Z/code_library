@@ -1,9 +1,10 @@
 #ifndef MY_CODE_VECTOR_H
 #define MY_CODE_VECTOR_H
 
-#include <bits/stdc++.h>
 #include <cassert>
 #include <cstdio>
+#include <utility>
+#include <iostream>
 
 namespace my_code {
 template <typename T>
