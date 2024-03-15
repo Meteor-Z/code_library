@@ -1,6 +1,6 @@
-#include <STL/string.h>
+#include <iostream>
+#include <STL/String.h>
 
 int main() {
-    my_code::String s = "hello";
-
+    string_test();
 }

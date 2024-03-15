@@ -57,8 +57,10 @@ public:
         }
     }
     ~Vector() noexcept {
+        // 1. clear -> destroy -> ~T()
+        // 2. ::operator delete -> operator delete();
         clear();
-        dealloc(m_ptr);
+        dealloc(m_ptr); 
     }
 
     Vector& operator=(const Vector& rhs) {
