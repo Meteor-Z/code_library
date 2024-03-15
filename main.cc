@@ -1,6 +1,13 @@
 #include <iostream>
-#include <STL/String.h>
+#include <string>
 
+struct Node {
+    int a { 1 };
+    int b { 2 };
+    int c { 2 };
+    // std::string f { 3 };
+};
 int main() {
-    string_test();
+    Node* b = new Node();
+    
 }
