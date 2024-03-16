@@ -28,12 +28,12 @@ inline void heap_sort(std::vector<int>& arr) {
 inline void heap_sort_test() {
     
     std::vector<int> arr { 0, 45, 14, 23, 1, 2, 53, 213, 1, 3 };
-    my_code::heap_sort(arr);
+    code::heap_sort(arr);
     int cnt = arr.size();
     while(cnt--) {
         std::cout << arr[1] << ' ';
         arr[1] = arr[cnt--];
-        my_code::down(arr,1);
+        code::down(arr,1);
     }
     
 }

@@ -65,7 +65,7 @@ inline void muti_merge_sort(std::vector<int>& arr, int l, int r) {
 };
 inline void merge_sort_test() {
     std::vector<int> arr { 1, 1, 45, 13, 1234, 12, 3, 123, 12, 312, 31, 2312, 3, 123 };
-    my_code::merge_sort(arr, 0, arr.size() - 1);
+    code::merge_sort(arr, 0, arr.size() - 1);
     for (const auto& item : arr) {
         std::cout << item << ' ';
     }
@@ -76,7 +76,7 @@ inline void merge_sort_test() {
         arr_2.push_back(i);
     }
 
-    my_code::muti_merge_sort(arr_2, 0, arr_2.size() - 1);
+    code::muti_merge_sort(arr_2, 0, arr_2.size() - 1);
     for (const auto& item: arr_2) {
         std::cout << item << ' ';
     }
