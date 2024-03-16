@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 
-namespace my_code {
+namespace code {
 inline void down(std::vector<int>& arr, int u) {
     int t = u;
     int n = arr.size();

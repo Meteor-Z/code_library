@@ -1,11 +1,11 @@
-#ifndef MY_CODE_MERGE_SORT_H
-#define MY_CODE_MERGE_SORT_H
+#ifndef CODE_MERGE_SORT_H
+#define CODE_MERGE_SORT_H
 
 #include <vector>
 #include <thread>
 #include <iostream>
 
-namespace my_code {
+namespace code {
 inline void merge_sort(std::vector<int>& arr, int l, int r) {
     if (l >= r) return;
 

@@ -1,8 +1,9 @@
-#ifndef MY_CODE_STL_ARRAY_H
-#define MY_CODE_STL_ARRAY_H
+#ifndef CODE_STL_ARRAY_H
+#define CODE_STL_ARRAY_H
 
 #include <cstddef>
-namespace my_code {
+
+namespace code {
 template <typename T, size_t Number>
 struct Array {
     T& operator[](size_t pos) { return arr[pos]; }

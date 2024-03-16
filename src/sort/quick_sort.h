@@ -1,10 +1,10 @@
-#ifndef MY_CODE_QUICK_SORT_H
-#define MY_CODE_QUICK_SORT_H
+#ifndef CODE_QUICK_SORT_H
+#define CODE_QUICK_SORT_H
 
 #include <iostream>
 #include <vector>
 
-namespace my_code {
+namespace code {
 inline void quick_sort(std::vector<int>& arr, int l, int r) {
     if (l >= r) return;
     int mid = arr[(l + r) / 2];

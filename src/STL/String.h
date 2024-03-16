@@ -1,5 +1,5 @@
-#ifndef MY_CODE_STRING_H
-#define MY_CODE_STRING_H
+#ifndef CODE_STRING_H
+#define CODE_STRING_H
 
 #include <cstddef>
 #include <cstring>
@@ -7,7 +7,7 @@
 #include <iostream>
 #include <utility>
 
-namespace my_code {
+namespace code {
 class String {
 public:
     friend bool operator<(const String& a, const String& b) {

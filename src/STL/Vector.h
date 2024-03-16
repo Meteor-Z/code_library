@@ -1,12 +1,12 @@
-#ifndef MY_CODE_VECTOR_H
-#define MY_CODE_VECTOR_H
+#ifndef CODE_VECTOR_H
+#define CODE_VECTOR_H
 
 #include <cassert>
 #include <cstdio>
 #include <utility>
 #include <iostream>
 
-namespace my_code {
+namespace code {
 template <typename T>
 class Vector {
 public:
