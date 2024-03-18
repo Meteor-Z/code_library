@@ -11,6 +11,7 @@ template <typename T>
 class Vector {
 public:
     explicit Vector() noexcept = default;
+    
     Vector(size_t n) : m_cap(n), m_ptr(alloc(n)) {
         for (; m_len < m_cap; m_len++) {
             construct(m_ptr + m_len);
