@@ -1,5 +1,10 @@
-#include <iostream>
+#ifndef CODE_DESIGN_PATTERNS_RESULT_H
+#define CODE_DESIGN_PATTERNS_RESULT_H
+
+#include <stdexcept>
 #include <variant>
+#include <iostream>
+namespace code {
 
 template <typename T, typename E>
 struct Result {
@@ -25,11 +30,15 @@ private:
     std::variant<T, E> m_value;
 };
 
-int main() {
-    Result<std::string, int> a("hello");
+}; // namespace code
+
+inline void result_test() {
+    code::Result<std::string, int> a("hello");
     if (a.is_ok()) {
         std::cout << a.value() << std::endl;
     }
-    Result<std::string, int> b(1);
+    code::Result<std::string, int> b(1);
     std::cout << b.error() << std::endl;
 }
+
+#endif
