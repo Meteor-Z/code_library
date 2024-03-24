@@ -14,17 +14,17 @@
 
 template <int N>
 struct Fib {
-    static constexpr long long value = Fib<N - 1>::value + Fib<N - 2>::value;
+    inline static constexpr long long value = Fib<N - 1>::value + Fib<N - 2>::value;
 };
 
 template <>
 struct Fib<0> {
-    static constexpr long long value = 1;
+    inline static constexpr long long value = 1;
 };
 
 template <>
 struct Fib<1> {
-    static constexpr long long value = 1;
+    inline static constexpr long long value = 1;
 };
 
 #endif

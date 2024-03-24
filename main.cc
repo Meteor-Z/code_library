@@ -26,10 +26,5 @@ private:
 };
 
 int main() {
-    Result<std::string, int> a("hello");
-    if (a.is_ok()) {
-        std::cout << a.value() << std::endl;
-    }
-    Result<std::string, int> b(1);
-    std::cout << b.error() << std::endl;
+    std::cout << Fib<4>::value << std::endl;
 }
